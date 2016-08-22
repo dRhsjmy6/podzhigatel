@@ -63,6 +63,15 @@ I decided to rename the class path after a [river in South America](https://en.w
  * Поджигатель uses the fact, that every time the home-button is clicked, there is a special output in the adb logcat log. Поджигатель starts a local adb logcat session and waites for this output (which is only working as long adb is enabled in FireTV settings). This approach has the advantage, that the top activity dont has to change to detect a home-button click. Поджигатель is therefore even able to detect a double-click and starting any actions on home-button single- or double-clicks.
  * Still not solved is the problem, that the default launcher flashes shortly before the right app is started. The default-behaviour of the home-button can still not be disabled.
 
+### Building Поджигатель:
+
+ * Download and unpack the [Android SDK](https://developer.android.com/studio/index.html#downloads)
+   * We will refer to the location to which you unpacked it as `ANDROID_HOME`; e.g. `~/android-sdk-linux` in the command lines below
+ * Update Android SDK and install the appropriate build tools with `tools/android update sdk --filter build-tools-22.0.1 --no-ui` (inside the `ANDROID_HOME`)
+ * Install the JRE and JDK, I for one am using 1.7 on x86-64 Ubuntu and installed it using: `apt-get install default-jre-headless default-jdk lib32stdc++6 lib32z1` (the last two packages are required to execute `aapt` from the 22.0.1 build tools on x86-64 Ubuntu)
+ * Clone this project with `git clone https://github.com/dRhsjmy6/podzhigatel.git` (install `git` if necessary)
+ * Build the release configuration using `env ANDROID_HOME=~/android-sdk-linux/ ./gradlew assembleRelease` (adjust the path if necessary)
+
 ### Credits:
 
  * [markdown-editor](https://jbt.github.io/markdown-editor/) for markdown creation
