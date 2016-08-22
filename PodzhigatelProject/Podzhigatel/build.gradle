@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 21
+    buildToolsVersion "24.0.1"
 
     defaultConfig {
         applicationId "com.amazon.podzhigatel"
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 23
-        versionName "3.2.3"
+        versionCode 24
+        versionName "3.2.4"
     }
 
     compileOptions {
